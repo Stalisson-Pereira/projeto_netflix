@@ -1,0 +1,28 @@
+<View controllerName="projetonetflix.controller.Inicio" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns:layout="sap.ui.layout" xmlns="sap.m">
+	<Page id="page" title="{i18n>title}">
+		<subHeader>
+			<Toolbar>
+				<content>
+					<Link text="Inicio" press="onIncioLinkPress" />
+					<Link text="Filmes" press="onFilmesLinkPress" />
+					<Link text="Series" press="onSeriesLinkPress" />
+					<ToolbarSpacer />
+					<SearchField width="30%" id="idSearchField" search="onSearchFieldSearch" />
+				</content>
+			</Toolbar>
+		</subHeader>
+		<content>
+			<layout:Grid content="{APINetflix>/titles}">
+				<VBox width="300px" height="350px" class="preencherBoxPreto">
+					<Image src="{APINetflix>jawSummary/backgroundImage/url}" width="100%" height="100%" class="corImage" />
+					<Image src="{APINetflix>jawSummary/logoImage/url}" width="60%" height="60%" class="margemLogo" />
+
+					<Text text="{APINetflix>jawSummary/title}" class="corTextoBranco espacoRodape margemLogo" />
+					<Text text="{APINetflix>jawSummary/synopsis}" class="corTextoBranco espacoRodape margemLogo" />
+					<Text text="{APINetflix>jawSummary/genres/1/name}" class="corTextoBranco espacoRodape margemLogo" />
+					<Text text="{APINetflix>jawSummary/genres/2/name}" class="corTextoBranco espacoRodape margemLogo" />
+				</VBox>
+			</layout:Grid>
+		</content>
+	</Page>
+</View>
